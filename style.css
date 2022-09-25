@@ -1,0 +1,90 @@
+#Credits{
+  margin-bottom:25px;
+  margin-left:10.2px;
+  opacity:.3;
+  color:gray;
+
+}
+html,body { height:100%; }
+#ChatTag{
+  margin-left:70.9%;
+}
+
+#Label{
+  color:Black;
+  font-family:Georgia;
+  margin-left:auto;
+  
+}
+
+#makeRoom {
+  outline: solid #000000 5px;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 2px;
+  width: 25%;
+  overflow: auto;
+}
+#rooms {
+  outline: solid #000000 5px;
+  margin: 5px;
+  padding: 5px;
+  border-radius:3px;
+  width: 25%;
+  overflow: auto;
+}
+
+#chat {
+  outline: solid #000000 5px;
+  float: right;
+  width: 50%;
+  padding: 5px;
+  border-radius: 5px;
+  overflow: auto;
+  height: 70%;
+}
+* {
+  font-family: courier;
+  /* the * means all*/
+}
+
+.MainRoom{
+  border-radius: 3px;
+  margin-bottom:10px;
+}
+
+button {
+  margin-top: 5px;
+  background-color: #ffffff;
+  border: solid black 1px;
+  border-radius: 3px;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 100px;
+  height: 30px;
+  
+  transition: ease-out width 0.2s;
+}
+/**/
+button:hover {
+  background-color: #ffffff;
+  border: solid black 1px;
+  border-radius: 3px;
+  color: #ff0000;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 130px;
+}
+
+#makeRoomTitle{
+resize:horizontal;
+  width:100px;
+  border-radius:3.7px;
+}
