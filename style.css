@@ -45,6 +45,7 @@ html,body { height:100%; }
 }
 * {
   font-family: courier;
+  font-size: ;
   /* the * means all*/
 }
 
@@ -64,7 +65,7 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  width: 100px;
+  width: 130px;
   height: 30px;
   
   transition: ease-out width 0.2s;
@@ -80,7 +81,7 @@ button:hover {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  width: 130px;
+  width: 150px;
 }
 
 #makeRoomTitle{
