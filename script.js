@@ -53,8 +53,8 @@ function post() {
       },
     )
     console.log(JSON.stringify(result))
-    http.setRequestHeader("Content-Type", "application/json");
     http.open("POST","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
+    http.setRequestHeader("Content-Type", "application/json");
     http.send(JSON.stringify(result))
   }
   http.send()
