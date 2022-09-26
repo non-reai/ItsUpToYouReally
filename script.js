@@ -64,7 +64,7 @@ function post() {
       http.setRequestHeader("Content-Type", "application/json");
       http.onload = function() {
       let result = JSON.parse(this.responseText)
-      getPosts(0,result)
+      getPosts(currentRoomId,result)
       while (document.getElementById("rooms").firstChild) {
         document.getElementById("rooms").firstChild.remove()
       }
