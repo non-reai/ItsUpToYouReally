@@ -1,7 +1,7 @@
 var http = new XMLHttpRequest
 
 http.open("GET","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
-
+http.setRequestHeader("Content-Type", "application/json");
 var currentRoomId = 0
 
 http.onload = function() {
@@ -53,8 +53,29 @@ function post() {
       },
     )
     console.log(JSON.stringify(result))
+    
     http.open("POST","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
     http.setRequestHeader("Content-Type", "application/json");
+    http.onload = function() {
+      http.open("GET","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
+      http.setRequestHeader("Content-Type", "application/json");
+      http.onload = function() {
+      let result = JSON.parse(this.responseText)
+      getPosts(0,result)
+      while (document.getElementById("rooms").firstChild) {
+        document.getElementById("rooms").firstChild.remove()
+      }
+      for (let i = 0; i < result["Rooms"].length; i++) {
+        let b = document.createElement("button")
+        b.innerText = result["Rooms"][i]["RoomName"]
+        document.getElementById("rooms").appendChild(b)
+        b.onclick = function () {
+          getPosts(result["Rooms"][i]["RoomId"],result)
+        }
+      }
+    }
+    http.send()
+    }
     http.send(JSON.stringify(result))
   }
   http.send()
