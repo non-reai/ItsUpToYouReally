@@ -111,7 +111,13 @@ function post() {
 
 }
 document.getElementById("makeRoomButton").onclick = function () {
-  makeRoom()
+  if (document.getElementById("makeRoomTitle").Value == "" || document.getElementById("makeRoomTitle").Value == null) {
+    document.getElementById("makeRoomButton").disabled = true
+    makeRoom()
+    setTimeout(() => {
+      document.getElementById("makeRoomButton").disabled = true
+    },10000)
+  }
 }
 function makeRoom() {
   http.open("GET","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
@@ -132,7 +138,7 @@ function makeRoom() {
       http.setRequestHeader("Content-Type", "application/json");
       http.onload = function() {
       let result = JSON.parse(this.responseText)
-      getPosts(0,result)
+      getPosts(currentRoomId,result)
       while (document.getElementById("rooms").firstChild) {
         document.getElementById("rooms").firstChild.remove()
       }
