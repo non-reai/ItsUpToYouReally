@@ -14,6 +14,9 @@ http.onload = function() {
     b.onclick = function () {
       getPosts(result["Rooms"][i]["RoomId"],result)
     }
+    let br = document.createElement("br")
+    document.getElementById("rooms").appendChild(br)
+    
   }
 }
 
@@ -72,6 +75,53 @@ function post() {
         b.onclick = function () {
           getPosts(result["Rooms"][i]["RoomId"],result)
         }
+        let br = document.createElement("br")
+        document.getElementById("rooms").appendChild(br)
+      }
+    }
+    http.send()
+    }
+    http.send(JSON.stringify(result))
+  }
+  http.send()
+
+
+}
+document.getElementById("makeRoomButton").onclick = function () {
+  makeRoom()
+}
+function makeRoom() {
+  http.open("GET","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
+  http.onload = function() {
+    result = JSON.parse(this.responseText)
+    result["Rooms"].push(
+      {
+        "RoomId": result["Rooms"].length + 1,
+        "RoomName": document.getElementById("makeRoomTitle").value
+      },
+    )
+    console.log(JSON.stringify(result))
+    
+    http.open("POST","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
+    http.setRequestHeader("Content-Type", "application/json");
+    http.onload = function() {
+      http.open("GET","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
+      http.setRequestHeader("Content-Type", "application/json");
+      http.onload = function() {
+      let result = JSON.parse(this.responseText)
+      getPosts(0,result)
+      while (document.getElementById("rooms").firstChild) {
+        document.getElementById("rooms").firstChild.remove()
+      }
+      for (let i = 0; i < result["Rooms"].length; i++) {
+        let b = document.createElement("button")
+        b.innerText = result["Rooms"][i]["RoomName"]
+        document.getElementById("rooms").appendChild(b)
+        b.onclick = function () {
+          getPosts(result["Rooms"][i]["RoomId"],result)
+        }
+        let br = document.createElement("br")
+        document.getElementById("rooms").appendChild(br)
       }
     }
     http.send()

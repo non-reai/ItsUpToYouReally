@@ -29,7 +29,7 @@ html,body { height:100%; }
   outline: solid #000000 5px;
   margin: 5px;
   padding: 5px;
-  border-radius:3px;
+  border-radius:2px;
   width: 25%;
   overflow: auto;
 }
@@ -100,13 +100,23 @@ button:hover {
   margin-bottom: 5px;
   outline: solid #000000 5px;
   width: 100%;
-  border-radius: 5px;
+  border-radius: 20px;
   overflow: auto;
   align-content: center;
   outline-offset: -5px;
 }
 #makeRoomTitle{
-resize:horizontal;
-  width:100px;
-  border-radius:3.7px;
+resize:none;
+  width:200px;
+  height:20px;
+  border-radius:3px;
+}
+#textMessage{
+  resize:none;
+  padding: 5px;
+  border-radius:3px;
+}
+#postMessage{
+  padding: 5px;
+  border-radius:3px;
 }
