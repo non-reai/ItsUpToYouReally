@@ -6,7 +6,7 @@ var currentRoomId = 0
 
 http.onload = function() {
   let result = JSON.parse(this.responseText)
-  getPosts(0,result)
+  getPosts(currentRoomId,result)
   for (let i = 0; i < result["Rooms"].length; i++) {
     let b = document.createElement("button")
     b.innerText = result["Rooms"][i]["RoomName"]
@@ -44,6 +44,29 @@ function getPosts(roomId,result) {
 }
 document.getElementById("postMessage").onclick = function () {
   post()
+}
+document.getElementById("refreshButton").onclick = function () {
+  http.open("GET","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")
+  http.setRequestHeader("Content-Type", "application/json");
+  http.onload = function() {
+    let result = JSON.parse(this.responseText)
+    getPosts(currentRoomId,result)
+    while (document.getElementById("rooms").firstChild) {
+      document.getElementById("rooms").firstChild.remove()
+    }
+    for (let i = 0; i < result["Rooms"].length; i++) {
+      let b = document.createElement("button")
+      b.innerText = result["Rooms"][i]["RoomName"]
+      document.getElementById("rooms").appendChild(b)
+      b.onclick = function () {
+        getPosts(result["Rooms"][i]["RoomId"],result)
+      }
+      let br = document.createElement("br")
+      document.getElementById("rooms").appendChild(br)
+    
+    }
+  }
+  http.send()
 }
 function post() {
   http.open("GET","https://getpantry.cloud/apiv1/pantry/259da317-fbba-4b87-afda-68171f60a086/basket/json")

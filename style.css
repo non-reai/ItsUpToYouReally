@@ -24,6 +24,7 @@ html,body { height:100%; }
   border-radius: 2px;
   width: 25%;
   overflow: auto;
+  text-align: center;
 }
 #rooms {
   outline: solid #000000 5px;
@@ -31,7 +32,9 @@ html,body { height:100%; }
   padding: 5px;
   border-radius:2px;
   width: 25%;
-  overflow: auto;
+  height: 60%;
+  overflow: scroll;
+  text-align: center;
 }
 #message {
   outline: solid #000000 5px;
@@ -53,7 +56,7 @@ html,body { height:100%; }
   padding: 5px;
   border-radius: 5px;
   overflow: auto;
-  height: 70%;
+  height: 60%;
   align-content: center;
 }
 * {
@@ -109,15 +112,11 @@ button:hover {
 resize:none;
   width:200px;
   height:20px;
-  border-radius:3px;
+  border-radius:6px;
 }
 #textMessage{
   resize:none;
-  padding: 5px;
+  padding: 3px;
   width: 98%;
-  border-radius:3px;
-}
-#postMessage{
-  padding: 5px;
-  border-radius:3px;
+  border-radius:10px;
 }
