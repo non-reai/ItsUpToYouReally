@@ -36,7 +36,7 @@ function getPosts(roomId,result) {
   for (let i = 0; i < roomIdPosts.length; i++) {
     let div = document.createElement("div")
     document.getElementById("chat").appendChild(div)
-    let text = document.createElement("p")
+    let text = document.createElement("pre")
     text.innerText = roomIdPosts[roomIdPosts.length-i-1]["PostContent"]
     div.classList.add("post")
     div.appendChild(text)

@@ -5,7 +5,10 @@
   color:gray;
 
 }
-html,body { height:100%; }
+html,body {
+  height:100%; 
+  background: white;
+}
 #ChatTag{
   margin-left:70.9%;
 }
@@ -18,7 +21,7 @@ html,body { height:100%; }
 }
 
 #makeRoom {
-  outline: solid #000000 5px;
+  outline: solid black 5px;
   margin: 5px;
   padding: 5px;
   border-radius: 2px;
@@ -27,7 +30,7 @@ html,body { height:100%; }
   text-align: center;
 }
 #rooms {
-  outline: solid #000000 5px;
+  outline: solid black 5px;
   margin: 5px;
   padding: 5px;
   border-radius:2px;
@@ -37,7 +40,7 @@ html,body { height:100%; }
   text-align: center;
 }
 #message {
-  outline: solid #000000 5px;
+  outline: solid black 5px;
   float: right;
   width: 50%;
   padding: 5px;
@@ -50,7 +53,7 @@ html,body { height:100%; }
   text-align: center;
   margin: 5px;
   margin-top: 0px;
-  outline: solid #000000 5px;
+  outline: solid black 5px;
   float: right;
   width: 50%;
   padding: 5px;
@@ -71,7 +74,7 @@ html,body { height:100%; }
 
 button {
   margin-top: 5px;
-  background-color: #ffffff;
+  background-color: white;
   border: solid black 1px;
   border-radius: 3px;
   color: black;
@@ -87,7 +90,7 @@ button {
 }
 /**/
 button:hover {
-  background-color: #ffffff;
+  background-color: white;
   border: solid black 1px;
   border-radius: 3px;
   color: #ff0000;
@@ -99,9 +102,10 @@ button:hover {
   width: 250px;
 }
 .post {
+  background: white;
   text-align: center;
   margin-bottom: 5px;
-  outline: solid #000000 5px;
+  outline: solid black 1px;
   width: 100%;
   border-radius: 20px;
   overflow: auto;
@@ -109,7 +113,7 @@ button:hover {
   outline-offset: -5px;
 }
 #makeRoomTitle{
-resize:none;
+  resize:none;
   width:200px;
   height:20px;
   border-radius:6px;
