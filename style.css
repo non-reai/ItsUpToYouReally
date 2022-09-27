@@ -102,6 +102,18 @@ button:hover {
   width: 250px;
   
 }
+button:focus {
+  background-color: white;
+  border: solid#0040ff 1px;
+  border-radius: 3px;
+  color: #0040ff;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  width: 200px;
+}
 button:disabled {
   background-color: #828282;
   border: solid black 1px;
